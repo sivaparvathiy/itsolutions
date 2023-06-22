@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    {% include 'navber.html' %}
+    <h2 class="text-center">Admin home page</h2>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+  <img class="d-block w-100" src="{% static 'images/python5.jpg'%}" alt="First slide">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="{% static 'images/python11.png'%}" alt="Second slide">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="{% static 'images/python6.jpg'%}" alt="Third slide">
+</div>
+</div>
+</div>
+
+
+
+
+  </body>
+</html>

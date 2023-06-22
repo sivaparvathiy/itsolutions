@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    {% include 'navber.html' %}
+      <h1 class="text-center mt-2"> welcome NTH  training and placement </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'images/sir2.jpeg'%}" alt="" style=" width:80%; height:80%; border-radius:40% border:2px pink solid">
+
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/sir2 (2).jpeg'%}" alt="" style=" width:70%; height:70%; border-radius:30%">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/srinu.jpeg' %}" alt="Card image cap"style="border-radius:30%">
+    <div class="card-body">
+      <h5 class="card-title">y.srinu</h5>
+      <p class="card-text">company  GOOGLE FRESHER</p>
+      <p class="card-text"><small class="text-muted">WELCOME TO LOCATION UK </small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/lakshmi3.jpeg'%}" alt="Card image cap" style="width:75%; height:75% ; border-radius:50%">
+    <div class="card-body">
+      <h5 class="card-title">s.lakshmi</h5>
+      <p class="card-text">company name TCS ,FRESHER </p>
+      <p class="card-text"><small class="text-muted">welcome NTH ,SALARY 5lak</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{% static 'images/ramana.jpeg' %}" alt="Card image  cap" style="border-radius:30%">
+    <div class="card-body">
+      <h5 class="card-title">k.koti</h5>
+      <p class="card-text"> company BRIGHT.COM FRESH </p>
+      <p class="card-text"><small class="text-muted">WELCOME TO LOCATION HYDEREBAD</small></p>
+    </div>
+  </body>
+</html>

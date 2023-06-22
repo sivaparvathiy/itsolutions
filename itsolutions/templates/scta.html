@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    #sp{
+      height: 440px;
+      margin:20px 0 0 150px;
+      padding:20px;
+      box-shadow: 0 0 10px blue;
+      border-radius:20px;
+      positon:fixed;
+      float: left;
+      width: 1000px;
+      overflow: auto;
+    }
+    .un{
+      box-shadow: 0 0 15px black;
+      border-radius:20px;
+      padding: 2px;
+      margin-right:90%;
+    }
+    body{
+      background-image: url("{% static 'images/12.jpg' %}");
+    }
+  </style>
+  <body>
+    {% include 'navber.html' %}
+    <div class="col-md-5" id="sp">
+        <h4 class="text-center"><i>comments!</i></h4>
+        {% if data %}
+        {% for i in data %}
+          <h6 class="un text-center">{{ i.user_name }}</h6>
+          <h6 class="ml-2">{{ i.comment }}</h6>
+          <p class="text-right">{{ i.date }}</p>
+          <hr>
+        {% endfor %}
+        {% else %}
+        <h3 class="text-center">No comments here!</h3>
+        {% endif %}
+    </div>
+
+  </body>
+</html>

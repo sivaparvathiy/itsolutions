@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+  body{
+    background-image: url("{% static 'images/123.jpg' %}");
+  }
+
+  </style>
+  <body>
+    {% include 'navber.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6">
+          <h3 class="text-center">admin form </h3>
+          <form method="POST">
+            {% csrf_token %}
+            <label>course name</label>
+            <input type="text" name="cname" class="form-control" placeholder="course name">
+            <label>fee</label>
+            <input type="number" name="fee" class="form-control" placeholder="fee">
+            <label>institute</label>
+            <input type="text" name="institue" class="form-control" placeholder="institute">
+            <label>trainer name</label>
+            <input type="text" name="tname" class="form-control" placeholder="trainer name">
+            <label>date</label>
+            <input type="date" name="date" class="form-control">
+            <label>training mode</label>
+            <input type="text" name="tmode" class="form-control" placeholder="training mode">
+          <div class="text-center mt-3">
+            <input type="submit"  value="submit" class="btn btn-success">
+            <input type="reset"  value="cancel" class="btn btn-danger">
+
+          </div>
+
+
+
+
+
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

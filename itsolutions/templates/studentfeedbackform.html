@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    body{
+      background-image: url("{% static 'images/3.jpg' %}");
+    }
+    #sd{
+      height: 440px;
+      margin:20px 0 0 0;
+      padding:10px;
+      box-shadow: 0 0 10px red;
+      border-radius:20px;
+    }
+    #sp{
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      height: 440px;
+      margin:20px 0 0 150px;
+      padding:25px;
+      box-shadow: 0 0 10px blue;
+      border-radius:20px;
+      positon:fixed;
+      float: left;
+      width: 1000px;
+      overflow: auto;
+    }
+    .un{
+      box-shadow: 0 0 15px white;
+      border-radius:20px;
+      padding: 0px 6px 0px 3px;
+      margin-right:90%;
+    }
+    #img{
+      border-radius:50px;
+    }
+    #img:hover{
+      margin-top: -15px;
+      box-shadow: 0 0 10px blue;
+    }
+    #pp{
+      margin-top: -40px;
+    }
+
+
+
+  </style>
+  <body>
+    {% include 'studentnavber.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5" id="sd">
+          <h1 class="text-center">feedback Here</h1>
+          <form method="POST">
+            {% csrf_token %}
+            <select class="form-control" name="uname">
+              <option value="{{request.user|capfirst}}">{{request.user|capfirst}}</option>
+            </select>
+            <textarea name="comment" rows="8" cols="80" class="form-control mt-2" placeholder="comment here"></textarea>
+            <input type="datetime-local" name="dt" value="" class="form-control mt-2">
+            <div class="text-center mt-2">
+              <input type="submit" value="comment" class="btn btn-primary">
+              <input type="reset" value="clear" class="btn btn-dark">
+            </div>
+
+          </form>
+
+        </div>
+        <div class="col-md-5" id="sp">
+            <h4 class="text-center"><i>comments!</i></h4>
+            {% if data %}
+            {% for i in data %}
+              <h6 class="un text-center">{{ i.user_name }}</h6>
+              <h6 class="ml-2">{{ i.comment }}</h6>
+              <p class="text-right" id="pp">
+                <a href="{% url 'dsc' i.id %}"><img src="{% static 'images/delete1.png' %}" alt="delete" style="height:7%; width:7%;" id="img"></a>
+                <br>
+                {{ i.date }}
+              </p>
+              <hr>
+            {% endfor %}
+            {% else %}
+            <h3 class="text-center">No comments here!</h3>
+            {% endif %}
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

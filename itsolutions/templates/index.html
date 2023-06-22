@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3 class="text-center">Admin Login</h3>
+          <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="Aunames" class="form-control" placeholder="enter admin user">
+            <input type="password" name="Aupass" class="form-control" placeholder="enter password">
+            <div class="text-center mt-2">
+              <input type="submit" value="login" class="btn btn-success">
+              <input type="reset" value="forget" class="btn btn-dark">
+
+            </div>
+          </form>
+
+        </div>
+        <div class="col-md-5">
+          <h3 class="text-center">Student Login</h3>
+          <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="Suname" class="form-control" placeholder="enter student user">
+            <input type="password" name="Supass" class="form-control" placeholder="enter password">
+            <div class="text-center mt-2">
+              <input type="submit" value="login" class="btn btn-success">
+              <input type="reset" value="forget" class="btn btn-dark">
+
+             <a href="{% url 'register' %}" class="btn btn-dark text-white">register</a>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

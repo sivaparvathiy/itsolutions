@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+<style media="screen">
+
+body{
+  background-image: url("{% static 'images/10.jpg' %}");
+}
+</style>
+  <body>
+    {% include 'navber.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-md-8 text-center">
+          <h3 class="text-center">class information!</h3>
+          <div class="">
+            {% if data %}
+            <table class="table table-bordered">
+              <thead>
+                <tr>+
+                  <th>first name</th>
+                  <th>last name</th>
+                  <th>email id</th>
+                  <th>moblie number</th>
+                  <th>course name</th>
+                  <th>qualification</th>
+                  <th>location</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in data %}
+                <tr>
+                  <td>{{ i.first_name }}</td>
+                  <td>{{ i.last_name }}</td>
+                  <td>{{ i.email_id }}</td>
+                  <td>{{ i.mobile }}</td>
+                  <td>{{ i.course }}</td>
+                  <td>{{ i.qualification }}</td>
+                  <td>{{ i.location }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% else %}
+            <h3 class="text-center">no class availble!</h3>
+            {% endif %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

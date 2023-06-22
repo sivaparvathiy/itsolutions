@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+<title></title>
+{% include 'cdnlines.html' %}
+</head>
+<style media="screen">
+body{
+  background-image: url("{% static 'images/5.jpg' %}");
+}
+</style>
+<body>
+{% include 'studentnavber.html' %}
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h3 class="text-center">Students form </h3>
+      <form method="POST">
+        {% csrf_token %}
+        <label>firstname</label>
+        <input type="text" name="fname" class="form-control" placeholder="first name">
+        <label>last name</label>
+        <input type="text" name="lname" class="form-control" placeholder="last name">
+        <label>email id</label>
+        <input type="text" name="institue" class="form-control" placeholder="email id">
+        <label>mobile</label>
+        <input type="number" name="mobile" class="form-control" placeholder="mobile">
+        <label>course</label>
+        <input type="text" name="course" class="form-control">
+        <label>qualification</label>
+        <input type="text" name="qualification" class="form-control" placeholder="qualification">
+        <label>location</label>
+        <input type="text" name="location" class="form-control" placeholder="location">
+      <div class="text-center mt-3">
+        <input type="submit"  value="submit" class="btn btn-success">
+        <input type="reset"  value="cancel" class="btn btn-danger">
+
+      </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
